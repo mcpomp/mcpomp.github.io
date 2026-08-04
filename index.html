@@ -374,6 +374,21 @@
     .freelance-box { grid-template-columns: 1fr; }
     .cta-section { padding: 2.5rem 1.5rem; }
   }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-switcher {
+    display: flex; gap: 4px; align-items: center;
+  }
+  .lang-btn {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    padding: 3px 8px; border-radius: 4px; border: 1px solid var(--rule);
+    background: transparent; color: var(--ink-light);
+    cursor: pointer; font-family: var(--font-body);
+    transition: all 0.15s;
+  }
+  .lang-btn.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .lang-btn:hover:not(.active) { border-color: var(--ink-mid); color: var(--ink); }
+  [data-lang] { transition: opacity 0.15s; }
 </style>
 </head>
 <body>
@@ -382,13 +397,19 @@
 <nav class="top-nav">
   <div class="wrap">
     <span class="nav-name">Marie-Christine Pomp</span>
-    <div class="nav-links">
-      <a href="#profil">Profil</a>
-      <a href="#freelance">Freelance</a>
-      <a href="#werdegang">Werdegang</a>
-      <a href="#projekte">Projekte</a>
-      <a href="#referenzen">Referenzen</a>
-      <a href="#kontakt">Kontakt</a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <div class="nav-links">
+        <a href="#profil" data-lang data-de="Profil" data-en="Profile">Profil</a>
+        <a href="#freelance" data-lang data-de="Freelance" data-en="Freelance">Freelance</a>
+        <a href="#werdegang" data-lang data-de="Werdegang" data-en="Experience">Werdegang</a>
+        <a href="#projekte" data-lang data-de="Projekte" data-en="Projects">Projekte</a>
+        <a href="#referenzen" data-lang data-de="Referenzen" data-en="References">Referenzen</a>
+        <a href="#kontakt" data-lang data-de="Kontakt" data-en="Contact">Kontakt</a>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -398,16 +419,16 @@
   <section class="hero" id="profil">
     <div class="hero-layout">
     <div>
-    <p class="hero-eyebrow">Portfolio · Marketing Strategy</p>
+    <p class="hero-eyebrow" data-lang data-de="Portfolio · Marketing Strategy" data-en="Portfolio · Marketing Strategy">Portfolio · Marketing Strategy</p>
     <h1 class="hero-name">Marie-Christine<br>Pomp</h1>
-    <p class="hero-title">Marketing Strategist</p>
-    <p class="hero-summary">
+    <p class="hero-title" data-lang data-de="Marketing Strategist" data-en="Marketing Strategist">Marketing Strategist</p>
+    <p class="hero-summary" data-lang data-de="Als leidenschaftliche Marketingstrategin mit fundierter Erfahrung im Bereich Social Media, Markenentwicklung und digitaler Kommunikation verfolge ich einen ganzheitlichen Ansatz, der kreative Ideen mit messbaren Ergebnissen verbindet. Parallel dazu berate ich als Freelancerin Kunden aus Mode, Immobilien und Unterhaltung." data-en="As a passionate marketing strategist with extensive experience in social media, brand development and digital communications, I take a holistic approach that connects creative ideas with measurable results. Alongside my work, I advise clients from fashion, real estate and entertainment as a freelancer.">
       Marketingstrategin mit über 5 Jahren Erfahrung — von der globalen Mediaagentur über nachhaltige Lifestyle-Brands bis hin zum Luxushotel-Portfolio. Ich verbinde strategisches Denken mit operativer Exzellenz: Ich entwickle Markenstrategien, setze sie kanalübergreifend um und führe dabei Teams und Dienstleister souverän.
     </p>
     <div class="hero-contact">
       <a href="mailto:marie-christine.pomp@outlook.com"><span class="icon">✉</span> marie-christine.pomp@outlook.com</a>
       <a href="https://www.linkedin.com/in/mcpomp" target="_blank"><span class="icon">in</span> linkedin.com/in/mcpomp</a>
-      <span><span class="icon">📍</span> Köln · Remote & vor Ort</span>
+      <span data-lang data-de="📍 Köln · Remote & vor Ort" data-en="📍 Cologne · Remote & on-site"><span class="icon">📍</span> Köln · Remote & vor Ort</span>
     </div>
     <div class="hero-pills">
       <span class="pill pill-green">Brand Strategy</span>
@@ -425,139 +446,139 @@
 
   <!-- FREELANCE INFO BOX -->
   <section class="section" id="freelance">
-    <p class="section-eyebrow">Für Auftraggeber</p>
+    <p class="section-eyebrow" data-lang data-de="Für Auftraggeber" data-en="For Clients">Für Auftraggeber</p>
     <div class="freelance-box">
-      <h3>So arbeite ich mit dir zusammen</h3>
+      <h3 data-lang data-de="So arbeite ich mit dir zusammen" data-en="How we work together">So arbeite ich mit dir zusammen</h3>
       <div>
-        <p class="fl-block-title">Leistungen</p>
+        <p class="fl-block-title" data-lang data-de="Leistungen" data-en="Services">Leistungen</p>
         <ul class="fl-list">
-          <li>Social Media Strategie & Konzeption</li>
-          <li>Content-Strategie & Redaktionsplanung</li>
-          <li>Influencer Marketing — Konzept bis Reporting</li>
-          <li>Laufende Kanalbetreuung (Instagram, TikTok, LinkedIn)</li>
-          <li>Kampagnenplanung & -steuerung (Organic & Paid)</li>
-          <li>Brand Strategie & Markenentwicklung</li>
-          <li>Agentur-Briefing & -steuerung</li>
+          <li data-lang data-de="Social Media Strategie & Konzeption" data-en="Social Media Strategy & Conception">Social Media Strategie & Konzeption</li>
+          <li data-lang data-de="Content-Strategie & Redaktionsplanung" data-en="Content Strategy & Editorial Planning">Content-Strategie & Redaktionsplanung</li>
+          <li data-lang data-de="Influencer Marketing — Konzept bis Reporting" data-en="Influencer Marketing — Concept to Reporting">Influencer Marketing — Konzept bis Reporting</li>
+          <li data-lang data-de="Laufende Kanalbetreuung (Instagram, TikTok, LinkedIn)" data-en="Ongoing Channel Management (Instagram, TikTok, LinkedIn)">Laufende Kanalbetreuung (Instagram, TikTok, LinkedIn)</li>
+          <li data-lang data-de="Kampagnenplanung & -steuerung (Organic & Paid)" data-en="Campaign Planning & Management (Organic & Paid)">Kampagnenplanung & -steuerung (Organic & Paid)</li>
+          <li data-lang data-de="Brand Strategie & Markenentwicklung" data-en="Brand Strategy & Brand Development">Brand Strategie & Markenentwicklung</li>
+          <li data-lang data-de="Agentur-Briefing & -steuerung" data-en="Agency Briefing & Management">Agentur-Briefing & -steuerung</li>
         </ul>
-        <p class="fl-block-title" style="margin-top:1rem;">Branchen-Expertise</p>
+        <p class="fl-block-title" style="margin-top:1rem;" data-lang data-de="Branchen-Expertise" data-en="Industry Expertise">Branchen-Expertise</p>
         <ul class="fl-list">
-          <li>Lifestyle · FMCG · Hospitality</li>
-          <li>Offen für alle Branchen</li>
+          <li data-lang data-de="Lifestyle · FMCG · Hospitality" data-en="Lifestyle · FMCG · Hospitality">Lifestyle · FMCG · Hospitality</li>
+          <li data-lang data-de="Offen für alle Branchen" data-en="Open to all industries">Offen für alle Branchen</li>
         </ul>
       </div>
       <div>
-        <p class="fl-block-title">Projektformate</p>
+        <p class="fl-block-title" data-lang data-de="Projektformate" data-en="Project Formats">Projektformate</p>
         <ul class="fl-list">
-          <li>Einmaliges Konzept / Strategie-Workshop</li>
-          <li>Laufende Betreuung (monatlich kündbar)</li>
-          <li>Projektbegleitung über definierte Laufzeit</li>
-          <li>Beratend / als externe Sparringspartnerin</li>
+          <li data-lang data-de="Einmaliges Konzept / Strategie-Workshop" data-en="One-off concept or strategy workshop">Einmaliges Konzept / Strategie-Workshop</li>
+          <li data-lang data-de="Laufende Betreuung (monatlich kündbar)" data-en="Ongoing support — long-term partnerships preferred">Laufende Betreuung (monatlich kündbar)</li>
+          <li data-lang data-de="Projektbegleitung über definierte Laufzeit" data-en="Project support over a defined period">Projektbegleitung über definierte Laufzeit</li>
+          <li data-lang data-de="Beratend / als externe Sparringspartnerin" data-en="Advisory / as an external sparring partner">Beratend / als externe Sparringspartnerin</li>
         </ul>
-        <p class="fl-block-title" style="margin-top:1rem;">Konditionen</p>
+        <p class="fl-block-title" style="margin-top:1rem;" data-lang data-de="Konditionen" data-en="Rates">Konditionen</p>
         <ul class="fl-list">
-          <li>Tagessatz: 700 €</li>
-          <li>Stundensatz: 95 €</li>
-          <li>Monatliche Betreuung: auf Anfrage</li>
-          <li>Reisebereitschaft deutschlandweit: Konditionen auf Anfrage</li>
+          <li data-lang data-de="Tagessatz: 700 €" data-en="Day rate: €700">Tagessatz: 700 €</li>
+          <li data-lang data-de="Stundensatz: 95 €" data-en="Hourly rate: €95">Stundensatz: 95 €</li>
+          <li data-lang data-de="Monatliche Betreuung: auf Anfrage" data-en="Monthly retainer: on request">Monatliche Betreuung: auf Anfrage</li>
+          <li data-lang data-de="Reisebereitschaft deutschlandweit: Konditionen auf Anfrage" data-en="Travel throughout Germany: rates on request">Reisebereitschaft deutschlandweit: Konditionen auf Anfrage</li>
         </ul>
-        <p class="fl-block-title" style="margin-top:1rem;">Verfügbarkeit</p>
+        <p class="fl-block-title" style="margin-top:1rem;" data-lang data-de="Verfügbarkeit" data-en="Availability">Verfügbarkeit</p>
         <ul class="fl-list">
-          <li>Remote & vor Ort in Köln / NRW</li>
+          <li data-lang data-de="Remote & vor Ort in Köln / NRW" data-en="Remote & on-site in Cologne / NRW">Remote & vor Ort in Köln / NRW</li>
         </ul>
-        <a href="mailto:marie-christine.pomp@outlook.com" class="fl-cta-btn">Projekt anfragen →</a>
+        <a href="mailto:marie-christine.pomp@outlook.com" class="fl-cta-btn" data-lang data-de="Projekt anfragen →" data-en="Request a project →">Projekt anfragen →</a>
       </div>
     </div>
     <div class="comp-grid">
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 01</p>
-        <p class="comp-card-title">Markenstrategie & CI</p>
-        <p class="comp-card-desc">Ganzheitliche Markenentwicklung, CI-Überwachung und strategische Positionierung von Marken</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 01" data-en="Strength 01">Stärke 01</p>
+        <p class="comp-card-title" data-lang data-de="Markenstrategie & CI" data-en="Brand Strategy & CI">Markenstrategie & CI</p>
+        <p class="comp-card-desc" data-lang data-de="Ganzheitliche Markenentwicklung, CI-Überwachung und strategische Positionierung von Marken" data-en="Holistic brand development, CI management and strategic brand positioning">Ganzheitliche Markenentwicklung, CI-Überwachung und strategische Positionierung von Marken</p>
       </div>
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 02</p>
-        <p class="comp-card-title">Multichannel-Marketing</p>
-        <p class="comp-card-desc">Integrierte Kampagnen über Paid, Owned & Earned Media — online wie offline, von der Idee bis zur Auswertung</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 02" data-en="Strength 02">Stärke 02</p>
+        <p class="comp-card-title" data-lang data-de="Multichannel-Marketing" data-en="Multichannel Marketing">Multichannel-Marketing</p>
+        <p class="comp-card-desc" data-lang data-de="Integrierte Kampagnen über Paid, Owned & Earned Media — online wie offline, von der Idee bis zur Auswertung" data-en="Integrated campaigns across Paid, Owned & Earned Media — online and offline, from idea to evaluation">Integrierte Kampagnen über Paid, Owned & Earned Media — online wie offline, von der Idee bis zur Auswertung</p>
       </div>
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 03</p>
-        <p class="comp-card-title">Social Media & Content</p>
-        <p class="comp-card-desc">Kanalstrategie, Content-Planung, Community Management und organisches Wachstum auf Instagram, TikTok & Co.</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 03" data-en="Strength 03">Stärke 03</p>
+        <p class="comp-card-title" data-lang data-de="Social Media & Content" data-en="Social Media & Content">Social Media & Content</p>
+        <p class="comp-card-desc" data-lang data-de="Kanalstrategie, Content-Planung, Community Management und organisches Wachstum auf Instagram, TikTok & Co." data-en="Channel strategy, content planning, community management and organic growth on Instagram, TikTok & more.">Kanalstrategie, Content-Planung, Community Management und organisches Wachstum auf Instagram, TikTok & Co.</p>
       </div>
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 04</p>
-        <p class="comp-card-title">Influencer Marketing</p>
-        <p class="comp-card-desc">End-to-End: Strategie, Verhandlung, Briefing und Reporting von Influencer-Kampagnen</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 04" data-en="Strength 04">Stärke 04</p>
+        <p class="comp-card-title" data-lang data-de="Influencer Marketing" data-en="Influencer Marketing">Influencer Marketing</p>
+        <p class="comp-card-desc" data-lang data-de="End-to-End: Strategie, Verhandlung, Briefing und Reporting von Influencer-Kampagnen" data-en="End-to-end: strategy, negotiation, briefing and reporting of influencer campaigns">End-to-End: Strategie, Verhandlung, Briefing und Reporting von Influencer-Kampagnen</p>
       </div>
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 05</p>
-        <p class="comp-card-title">Projektmanagement</p>
-        <p class="comp-card-desc">Strukturierte Planung und Steuerung von Projekten — von der Konzeption über die Umsetzung bis zum Abschluss</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 05" data-en="Strength 05">Stärke 05</p>
+        <p class="comp-card-title" data-lang data-de="Projektmanagement" data-en="Project Management">Projektmanagement</p>
+        <p class="comp-card-desc" data-lang data-de="Strukturierte Planung und Steuerung von Projekten — von der Konzeption über die Umsetzung bis zum Abschluss" data-en="Structured planning and management of projects — from conception through implementation to completion">Strukturierte Planung und Steuerung von Projekten — von der Konzeption über die Umsetzung bis zum Abschluss</p>
       </div>
       <div class="comp-card">
-        <p class="comp-card-label">Stärke 06</p>
-        <p class="comp-card-title">Budgetplanung & Reporting</p>
-        <p class="comp-card-desc">Budgetverantwortung, KPI-Tracking, Kampagnenanalyse und Handlungsempfehlungen für Entscheider</p>
+        <p class="comp-card-label" data-lang data-de="Stärke 06" data-en="Strength 06">Stärke 06</p>
+        <p class="comp-card-title" data-lang data-de="Budgetplanung & Reporting" data-en="Budget Planning & Reporting">Budgetplanung & Reporting</p>
+        <p class="comp-card-desc" data-lang data-de="Budgetverantwortung, KPI-Tracking, Kampagnenanalyse und Handlungsempfehlungen für Entscheider" data-en="Budget responsibility, KPI tracking, campaign analysis and recommendations for decision-makers">Budgetverantwortung, KPI-Tracking, Kampagnenanalyse und Handlungsempfehlungen für Entscheider</p>
       </div>
     </div>
   </section>
 
   <!-- WERDEGANG -->
   <section class="section" id="werdegang">
-    <p class="section-eyebrow">Beruflicher Werdegang</p>
+    <p class="section-eyebrow" data-lang data-de="Beruflicher Werdegang" data-en="Professional Experience">Beruflicher Werdegang</p>
     <div class="station-list">
       <div class="station">
         <div class="station-meta">
-          <p class="station-period">Jan 2023 – heute</p>
-          <p class="station-company">Self-employed</p>
+          <p class="station-period" data-lang data-de="Jan 2023 – heute" data-en="Jan 2023 – present">Jan 2023 – heute</p>
+          <p class="station-company" data-key="station-fl-company">Self-employed</p>
         </div>
         <div>
-          <p class="station-role">Freelance Digital Marketing <span class="fl-badge">Parallel</span></p>
-          <p class="station-desc">Beratung von Kunden aus Immobilien, Mode und Unterhaltung — u.a. mine mina (Hamburg) und Carina Communications (Köln). Entwicklung maßgeschneiderter Social Media Konzepte, Kanalbetreuung, Influencer-Datenbankaufbau, monatliche Reportings.</p>
-          <div class="tag-row"><span class="tag">Social Media Strategie</span><span class="tag">Redaktionsplanung</span><span class="tag">Influencer Marketing</span><span class="tag">Reporting</span></div>
+          <p class="station-role" data-lang data-de="Freelance Digital Marketing" data-en="Freelance Digital Marketing">Freelance Digital Marketing <span class="fl-badge" data-lang data-de="Parallel" data-en="Parallel">Parallel</span></p>
+          <p class="station-desc" data-lang data-de="Beratung von Kunden aus Immobilien, Mode und Unterhaltung — u.a. mine mina (Hamburg) und Carina Communications (Köln). Entwicklung maßgeschneiderter Social Media Konzepte, Kanalbetreuung, Influencer-Datenbankaufbau, monatliche Reportings." data-en="Advising clients from real estate, fashion and entertainment — including mine mina (Hamburg) and Carina Communications (Cologne). Developing tailored social media concepts, channel management, influencer database setup, monthly reporting.">Beratung von Kunden aus Immobilien, Mode und Unterhaltung — u.a. mine mina (Hamburg) und Carina Communications (Köln). Entwicklung maßgeschneiderter Social Media Konzepte, Kanalbetreuung, Influencer-Datenbankaufbau, monatliche Reportings.</p>
+          <div class="tag-row"><span class="tag" data-lang data-de="Social Media Strategie" data-en="Social Media Strategy">Social Media Strategie</span><span class="tag" data-lang data-de="Redaktionsplanung" data-en="Editorial Planning">Redaktionsplanung</span><span class="tag" data-lang data-de="Influencer Marketing" data-en="Influencer Marketing">Influencer Marketing</span><span class="tag" data-lang data-de="Reporting" data-en="Reporting">Reporting</span></div>
         </div>
       </div>
       <div class="station">
         <div class="station-meta">
-          <p class="station-period">Nov 2023 – Dez 2025</p>
-          <p class="station-company">HON-Service / HONESTIS AG</p>
+          <p class="station-period" data-lang data-de="Nov 2023 – Dez 2025" data-en="Nov 2023 – Dec 2025">Nov 2023 – Dez 2025</p>
+          <p class="station-company" data-lang data-de="HON-Service / HONESTIS AG" data-en="HON-Service / HONESTIS AG">HON-Service / HONESTIS AG</p>
         </div>
         <div>
-          <p class="station-role">Brand Manager — Hommage Luxury Hotels Collection</p>
-          <p class="station-desc">Verantwortung für die gesamte Markenstrategie einer Luxushotelkollektion (6 Hotels). Entwicklung eines innovativen Marketingansatzes für Grand Tirolia Kitzbühel zur Erschließung neuer Zielgruppen. Erfolgreiche Leitung eines Agenturwechsels sowie Projektlead beim Website-Relaunch. Fachliche Teamführung, direktes Reporting an VP Marketing & GF.</p>
-          <div class="tag-row"><span class="tag">Brand Strategy</span><span class="tag">Agenturwechsel</span><span class="tag">Website-Relaunch</span><span class="tag">Change Management</span><span class="tag">Teamführung</span></div>
+          <p class="station-role" data-lang data-de="Brand Manager — Hommage Luxury Hotels Collection" data-en="Brand Manager — Hommage Luxury Hotels Collection">Brand Manager — Hommage Luxury Hotels Collection</p>
+          <p class="station-desc" data-lang data-de="Verantwortung für die gesamte Markenstrategie einer Luxushotelkollektion (6 Hotels). Entwicklung eines innovativen Marketingansatzes für Grand Tirolia Kitzbühel zur Erschließung neuer Zielgruppen. Erfolgreiche Leitung eines Agenturwechsels sowie Projektlead beim Website-Relaunch. Fachliche Teamführung, direktes Reporting an VP Marketing & GF." data-en="Responsibility for the full brand strategy of a luxury hotel collection (6 hotels). Development of an innovative marketing approach for Grand Tirolia Kitzbühel to reach new target groups. Successful management of an agency change and project lead for the website relaunch. Team leadership with direct reporting to VP Marketing & management.">Verantwortung für die gesamte Markenstrategie einer Luxushotelkollektion (6 Hotels). Entwicklung eines innovativen Marketingansatzes für Grand Tirolia Kitzbühel zur Erschließung neuer Zielgruppen. Erfolgreiche Leitung eines Agenturwechsels sowie Projektlead beim Website-Relaunch. Fachliche Teamführung, direktes Reporting an VP Marketing & GF.</p>
+          <div class="tag-row"><span class="tag" data-lang data-de="Brand Strategy" data-en="Brand Strategy">Brand Strategy</span><span class="tag" data-lang data-de="Agenturwechsel" data-en="Agency Change">Agenturwechsel</span><span class="tag" data-lang data-de="Website-Relaunch" data-en="Website Relaunch">Website-Relaunch</span><span class="tag" data-lang data-de="Change Management" data-en="Change Management">Change Management</span><span class="tag" data-lang data-de="Teamführung" data-en="Team Leadership">Teamführung</span></div>
         </div>
       </div>
       <div class="station">
         <div class="station-meta">
-          <p class="station-period">Jan – Dez 2022</p>
-          <p class="station-company">Vierfreunde GmbH / KERBHOLZ</p>
+          <p class="station-period" data-lang data-de="Jan – Dez 2022" data-en="Jan – Dec 2022">Jan – Dez 2022</p>
+          <p class="station-company" data-lang data-de="Vierfreunde GmbH / KERBHOLZ" data-en="Vierfreunde GmbH / KERBHOLZ">Vierfreunde GmbH / KERBHOLZ</p>
         </div>
         <div>
-          <p class="station-role">Social Media Managerin</p>
-          <p class="station-desc">Aufbau und Management aller organischen Social-Media-Kanäle für die Marke KERBHOLZ. TikTok-Kanalaufbau von Null, UGC-Prozesse etabliert, Employer Branding auf LinkedIn.</p>
-          <div class="tag-row"><span class="tag">TikTok-Aufbau</span><span class="tag">UGC-Prozesse</span><span class="tag">Influencer Marketing</span><span class="tag">Team-Leadership</span></div>
+          <p class="station-role" data-lang data-de="Social Media Managerin" data-en="Social Media Manager">Social Media Managerin</p>
+          <p class="station-desc" data-lang data-de="Aufbau und Management aller organischen Social-Media-Kanäle für die Marke KERBHOLZ. TikTok-Kanalaufbau von Null, UGC-Prozesse etabliert, Employer Branding auf LinkedIn." data-en="Building and managing all organic social media channels for the KERBHOLZ brand. TikTok channel built from scratch, UGC processes established, employer branding on LinkedIn.">Aufbau und Management aller organischen Social-Media-Kanäle für die Marke KERBHOLZ. TikTok-Kanalaufbau von Null, UGC-Prozesse etabliert, Employer Branding auf LinkedIn.</p>
+          <div class="tag-row"><span class="tag" data-lang data-de="TikTok-Aufbau" data-en="TikTok Build-up">TikTok-Aufbau</span><span class="tag" data-lang data-de="UGC-Prozesse" data-en="UGC Processes">UGC-Prozesse</span><span class="tag" data-lang data-de="Influencer Marketing" data-en="Influencer Marketing">Influencer Marketing</span><span class="tag" data-lang data-de="Team-Leadership" data-en="Team Leadership">Team-Leadership</span></div>
         </div>
       </div>
       <div class="station">
         <div class="station-meta">
-          <p class="station-period">Okt 2020 – Dez 2021</p>
-          <p class="station-company">GroupM / mSTUDIO GmbH</p>
+          <p class="station-period" data-lang data-de="Okt 2020 – Dez 2021" data-en="Oct 2020 – Dec 2021">Okt 2020 – Dez 2021</p>
+          <p class="station-company" data-lang data-de="GroupM / mSTUDIO GmbH" data-en="GroupM / mSTUDIO GmbH">GroupM / mSTUDIO GmbH</p>
         </div>
         <div>
-          <p class="station-role">Junior → Consultant Influencer Marketing</p>
-          <p class="station-desc">Betreuung internationaler Großkunden (u.a. Mars, Toyota Deutschland, Kärcher) in der weltweit führenden Mediainvestmentgruppe. Aufstieg zur internen Head of INCA — Koordination, Prozessoptimierung, monatliches GF-Reporting.</p>
-          <div class="tag-row"><span class="tag">Head of INCA</span><span class="tag">Vertragsverhandlung</span><span class="tag">Prozessoptimierung</span><span class="tag">Facebook Ads / TikTok</span></div>
+          <p class="station-role" data-lang data-de="Junior → Consultant Influencer Marketing" data-en="Junior → Consultant Influencer Marketing">Junior → Consultant Influencer Marketing</p>
+          <p class="station-desc" data-lang data-de="Betreuung internationaler Großkunden (u.a. Mars, Toyota Deutschland, Kärcher) in der weltweit führenden Mediainvestmentgruppe. Aufstieg zur internen Head of INCA — Koordination, Prozessoptimierung, monatliches GF-Reporting." data-en="Managing international key clients (incl. Mars, Toyota Germany, Kärcher) at the world's leading media investment group. Promoted to internal Head of INCA — coordination, process optimisation, monthly management reporting.">Betreuung internationaler Großkunden (u.a. Mars, Toyota Deutschland, Kärcher) in der weltweit führenden Mediainvestmentgruppe. Aufstieg zur internen Head of INCA — Koordination, Prozessoptimierung, monatliches GF-Reporting.</p>
+          <div class="tag-row"><span class="tag" data-lang data-de="Head of INCA" data-en="Head of INCA">Head of INCA</span><span class="tag" data-lang data-de="Vertragsverhandlung" data-en="Contract Negotiation">Vertragsverhandlung</span><span class="tag" data-lang data-de="Prozessoptimierung" data-en="Process Optimisation">Prozessoptimierung</span><span class="tag" data-lang data-de="Facebook Ads / TikTok" data-en="Facebook Ads / TikTok">Facebook Ads / TikTok</span></div>
         </div>
       </div>
       <div class="station">
         <div class="station-meta">
-          <p class="station-period">März 2018 – Sep 2019</p>
-          <p class="station-company">FOND OF GmbH</p>
+          <p class="station-period" data-lang data-de="März 2018 – Sep 2019" data-en="Mar 2018 – Sep 2019">März 2018 – Sep 2019</p>
+          <p class="station-company" data-lang data-de="FOND OF GmbH" data-en="FOND OF GmbH">FOND OF GmbH</p>
         </div>
         <div>
-          <p class="station-role">Werkstudentin Influencer Marketing</p>
-          <p class="station-desc">Planung und Durchführung von Influencer-Kooperationen, KPI-Definition, Betreuung der Social-Media-Kanäle Instagram und Pinterest sowie kontinuierliche Prozessoptimierung.</p>
-          <div class="tag-row"><span class="tag">Influencer-Kooperationen</span><span class="tag">Instagram & Pinterest</span><span class="tag">KPI-Definition</span></div>
+          <p class="station-role" data-lang data-de="Werkstudentin Influencer Marketing" data-en="Working Student Influencer Marketing">Werkstudentin Influencer Marketing</p>
+          <p class="station-desc" data-lang data-de="Planung und Durchführung von Influencer-Kooperationen, KPI-Definition, Betreuung der Social-Media-Kanäle Instagram und Pinterest sowie kontinuierliche Prozessoptimierung." data-en="Planning and executing influencer collaborations, KPI definition, management of Instagram and Pinterest channels and continuous process optimisation.">Planung und Durchführung von Influencer-Kooperationen, KPI-Definition, Betreuung der Social-Media-Kanäle Instagram und Pinterest sowie kontinuierliche Prozessoptimierung.</p>
+          <div class="tag-row"><span class="tag" data-lang data-de="Influencer-Kooperationen" data-en="Influencer Collaborations">Influencer-Kooperationen</span><span class="tag" data-lang data-de="Instagram & Pinterest" data-en="Instagram & Pinterest">Instagram & Pinterest</span><span class="tag" data-lang data-de="KPI-Definition" data-en="KPI Definition">KPI-Definition</span></div>
         </div>
       </div>
     </div>
@@ -565,41 +586,41 @@
 
   <!-- PROJEKTE -->
   <section class="section" id="projekte">
-    <p class="section-eyebrow">Ausgewählte Projekte</p>
+    <p class="section-eyebrow" data-lang data-de="Ausgewählte Projekte" data-en="Selected Projects">Ausgewählte Projekte</p>
     <div class="proj-tabs">
-      <button class="proj-tab active" onclick="showProj('hommage', this)">Hommage Luxury Hotels</button>
-      <button class="proj-tab" onclick="showProj('kerbholz', this)">KERBHOLZ</button>
-      <button class="proj-tab" onclick="showProj('groupm', this)">GroupM / mSTUDIO</button>
-      <button class="proj-tab" onclick="showProj('freelance', this)">Freelance</button>
+      <button class="proj-tab active" onclick="showProj('hommage', this)" data-lang data-de="Hommage Luxury Hotels" data-en="Hommage Luxury Hotels">Hommage Luxury Hotels</button>
+      <button class="proj-tab" onclick="showProj('kerbholz', this)" data-lang data-de="KERBHOLZ" data-en="KERBHOLZ">KERBHOLZ</button>
+      <button class="proj-tab" onclick="showProj('groupm', this)" data-lang data-de="GroupM / mSTUDIO" data-en="GroupM / mSTUDIO">GroupM / mSTUDIO</button>
+      <button class="proj-tab" onclick="showProj('freelance', this)" data-lang data-de="Freelance" data-en="Freelance">Freelance</button>
     </div>
 
     <!-- HOMMAGE PROJECTS -->
     <div class="proj-block visible" id="proj-hommage">
       <div class="proj-block-header">
-        <p class="proj-block-name">Hommage Luxury Hotels Collection</p>
-        <p class="proj-block-meta">Nov 2023 – Dez 2025 · HON-Service GmbH · Brand Manager</p>
+        <p class="proj-block-name" data-key="proj-hom-name">Hommage Luxury Hotels Collection</p>
+        <p class="proj-block-meta" data-lang data-de="Nov 2023 – Dez 2025 · HON-Service GmbH · Brand Manager" data-en="Nov 2023 – Dec 2025 · HON-Service GmbH · Brand Manager">Nov 2023 – Dez 2025 · HON-Service GmbH · Brand Manager</p>
       </div>
       <div class="proj-list">
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Strategie · Zielgruppenerweiterung</p><p class="proj-title">Grand Tirolia Kitzbühel — Familien als neue Zielgruppe</p><p class="proj-subtitle">360°-Marketingkonzept zur Erschließung der Familien-ZG rund um den Hotelneubau</p></div>
+            <div><p class="proj-cat" data-lang data-de="Strategie · Zielgruppenerweiterung" data-en="Strategy · Target Group Expansion">Strategie · Zielgruppenerweiterung</p><p class="proj-title" data-lang data-de="Grand Tirolia Kitzbühel — Familien als neue Zielgruppe" data-en="Grand Tirolia Kitzbühel — Families as a New Target Group">Grand Tirolia Kitzbühel — Familien als neue Zielgruppe</p><p class="proj-subtitle" data-lang data-de="360°-Marketingkonzept zur Erschließung der Familien-ZG rund um den Hotelneubau" data-en="360° marketing concept to reach the family target group around the hotel extension">360°-Marketingkonzept zur Erschließung der Familien-ZG rund um den Hotelneubau</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">Das Grand Tirolia Kitzbühel erweiterte sein Angebot mit einem Neubau für Familien (Kidsbereich, Kinderpool, Familien-Spa). Die Marke war bisher nicht in dieser Zielgruppe etabliert — ein vollständig neues Marktsegment musste erschlossen werden.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Entwicklung eines 360°-Konzeptes inkl. Wettbewerbsanalyse relevanter Familien-Hotels in der Region. Erarbeitung einer Kommunikationsstrategie für drei Phasen: Pre-Opening, Eröffnung und Betrieb. Aufsetzen und Steuerung der Umsetzung mit dem Hotel.</p>
-                <div><span class="role-tag">Konzeptentwicklung</span><span class="role-tag">Wettbewerbsanalyse</span><span class="role-tag">Kanalplanung</span><span class="role-tag">Projektsteuerung</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="Das Grand Tirolia Kitzbühel erweiterte sein Angebot mit einem Neubau für Familien (Kidsbereich, Kinderpool, Familien-Spa). Die Marke war bisher nicht in dieser Zielgruppe etabliert — ein vollständig neues Marktsegment musste erschlossen werden." data-en="Grand Tirolia Kitzbühel extended its offering with a new family wing (kids area, children's pool, family spa). The brand had not previously been established in this target group — an entirely new market segment needed to be reached.">Das Grand Tirolia Kitzbühel erweiterte sein Angebot mit einem Neubau für Familien (Kidsbereich, Kinderpool, Familien-Spa). Die Marke war bisher nicht in dieser Zielgruppe etabliert — ein vollständig neues Marktsegment musste erschlossen werden.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Entwicklung eines 360°-Konzeptes inkl. Wettbewerbsanalyse relevanter Familien-Hotels in der Region. Erarbeitung einer Kommunikationsstrategie für drei Phasen: Pre-Opening, Eröffnung und Betrieb. Aufsetzen und Steuerung der Umsetzung mit dem Hotel." data-en="Development of a 360° concept incl. competitive analysis of relevant family hotels in the region. Creation of a communication strategy for three phases: pre-opening, launch and ongoing operations. Set-up and steering of implementation with the hotel.">Entwicklung eines 360°-Konzeptes inkl. Wettbewerbsanalyse relevanter Familien-Hotels in der Region. Erarbeitung einer Kommunikationsstrategie für drei Phasen: Pre-Opening, Eröffnung und Betrieb. Aufsetzen und Steuerung der Umsetzung mit dem Hotel.</p>
+                <div><span class="role-tag" data-lang data-de="Konzeptentwicklung" data-en="Concept Development">Konzeptentwicklung</span><span class="role-tag" data-lang data-de="Wettbewerbsanalyse" data-en="Competitive Analysis">Wettbewerbsanalyse</span><span class="role-tag" data-lang data-de="Kanalplanung" data-en="Channel Planning">Kanalplanung</span><span class="role-tag" data-lang data-de="Projektsteuerung" data-en="Project Management">Projektsteuerung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-tl">
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#3D7A63"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">Pre-Opening</span><br>Wettbewerbsanalyse, Positionierung, Teaser-Kommunikation</div></div>
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#6B63A8"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">Eröffnung</span><br>Content-Produktion, Social-Kampagne, PR, Kooperationen</div></div>
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#C4623A"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">Betrieb</span><br>Always-on, saisonale Aktivierungen, KPI-Monitoring</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#3D7A63"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="Pre-Opening" data-en="Pre-Opening">Pre-Opening</span><br>Wettbewerbsanalyse, Positionierung, Teaser-Kommunikation</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#6B63A8"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="Eröffnung" data-en="Launch">Eröffnung</span><br>Content-Produktion, Social-Kampagne, PR, Kooperationen</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#C4623A"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="Betrieb" data-en="Operations">Betrieb</span><br>Always-on, saisonale Aktivierungen, KPI-Monitoring</div></div>
                 </div>
               </div>
             </div>
@@ -608,17 +629,17 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Strategie · Multichannel</p><p class="proj-title">360°-Marketingstrategie Grand Tirolia 2026</p><p class="proj-subtitle">Gesamtstrategie für alle Zielgruppen — Outdoor, Wellness, Familie, Golf, Winter</p></div>
+            <div><p class="proj-cat" data-lang data-de="Strategie · Multichannel" data-en="Strategy · Multichannel">Strategie · Multichannel</p><p class="proj-title" data-lang data-de="360°-Marketingstrategie Grand Tirolia 2026" data-en="360° Marketing Strategy Grand Tirolia 2026">360°-Marketingstrategie Grand Tirolia 2026</p><p class="proj-subtitle" data-lang data-de="Gesamtstrategie für alle Zielgruppen — Outdoor, Wellness, Familie, Golf, Winter" data-en="Full strategy for all target groups — Outdoor, Wellness, Family, Golf, Winter">Gesamtstrategie für alle Zielgruppen — Outdoor, Wellness, Familie, Golf, Winter</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">Das Hotel spricht sehr unterschiedliche Zielgruppen an. Eine kohärente, kanalübergreifende Strategie für 2026 sollte alle ZGs gezielt ansprechen.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">ZG-Profile und -verhalten, relevante Kanäle pro ZG, Category Entry Points, Kommunikationsschwerpunkte sowie on- und offline Aktivitäten mit Budgetkalkulation.</p>
-                <div><span class="role-tag">ZG-Analyse</span><span class="role-tag">Category Entry Points</span><span class="role-tag">Budgetplanung</span><span class="role-tag">On- & Offline</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="Das Hotel spricht sehr unterschiedliche Zielgruppen an. Eine kohärente, kanalübergreifende Strategie für 2026 sollte alle ZGs gezielt ansprechen." data-en="The hotel addresses very different target groups. A coherent, cross-channel strategy for 2026 was needed to reach all target groups effectively.">Das Hotel spricht sehr unterschiedliche Zielgruppen an. Eine kohärente, kanalübergreifende Strategie für 2026 sollte alle ZGs gezielt ansprechen.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="ZG-Profile und -verhalten, relevante Kanäle pro ZG, Category Entry Points, Kommunikationsschwerpunkte sowie on- und offline Aktivitäten mit Budgetkalkulation." data-en="Target group profiles and behaviour, relevant channels per target group, category entry points, communication priorities and on- and offline activities with budget planning.">ZG-Profile und -verhalten, relevante Kanäle pro ZG, Category Entry Points, Kommunikationsschwerpunkte sowie on- und offline Aktivitäten mit Budgetkalkulation.</p>
+                <div><span class="role-tag" data-lang data-de="ZG-Analyse" data-en="Target Group Analysis">ZG-Analyse</span><span class="role-tag" data-lang data-de="Category Entry Points" data-en="Category Entry Points">Category Entry Points</span><span class="role-tag" data-lang data-de="Budgetplanung" data-en="Budget Planning">Budgetplanung</span><span class="role-tag" data-lang data-de="On- & Offline" data-en="On- & Offline">On- & Offline</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-bars">
@@ -636,17 +657,17 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Social Media · Paid & Organic</p><p class="proj-title">Social Media Strategie — Dachmarke & Hotelbrands</p><p class="proj-subtitle">Aufbau einer vollständigen Paid-Strategie von Grund auf — 2025 erstes Jahr mit konstanter Ad-Ausspielung</p></div>
+            <div><p class="proj-cat" data-lang data-de="Social Media · Paid & Organic" data-en="Social Media · Paid & Organic">Social Media · Paid & Organic</p><p class="proj-title" data-lang data-de="Social Media Strategie — Dachmarke & Hotelbrands" data-en="Social Media Strategy — Umbrella Brand & Hotel Brands">Social Media Strategie — Dachmarke & Hotelbrands</p><p class="proj-subtitle" data-lang data-de="Aufbau einer vollständigen Paid-Strategie von Grund auf — 2025 erstes Jahr mit konstanter Ad-Ausspielung" data-en="Building a complete paid strategy from scratch — 2025 was the first year with consistent ad delivery">Aufbau einer vollständigen Paid-Strategie von Grund auf — 2025 erstes Jahr mit konstanter Ad-Ausspielung</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">Kein aufgebauter Paid-Funnel, keine konsistente Markenkommunikation über Social. Fokus: stiller Luxus, Auszeit, „Eine Hommage an…"</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Agentur-Sourcing und Pitchbegleitung, organische Markenstrategie + Paid-Strategie entlang des See–Think–Do-Funnels. Schnittstelle zwischen Agentur und Hotels.</p>
-                <div><span class="role-tag">Agentur-Pitch</span><span class="role-tag">Paid Strategie (Meta)</span><span class="role-tag">Funnel-Aufbau</span><span class="role-tag">Projektverantwortung</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="Kein aufgebauter Paid-Funnel, keine konsistente Markenkommunikation über Social. Fokus: stiller Luxus, Auszeit, „Eine Hommage an…"" data-en="No established paid funnel, no consistent brand communication via social. Focus: quiet luxury, escape, "A Hommage to…"">Kein aufgebauter Paid-Funnel, keine konsistente Markenkommunikation über Social. Fokus: stiller Luxus, Auszeit, „Eine Hommage an…"</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Agentur-Sourcing und Pitchbegleitung, organische Markenstrategie + Paid-Strategie entlang des See–Think–Do-Funnels. Schnittstelle zwischen Agentur und Hotels." data-en="Agency sourcing and pitch support, organic brand strategy + paid strategy along the See–Think–Do funnel. Interface between agency and hotels.">Agentur-Sourcing und Pitchbegleitung, organische Markenstrategie + Paid-Strategie entlang des See–Think–Do-Funnels. Schnittstelle zwischen Agentur und Hotels.</p>
+                <div><span class="role-tag" data-lang data-de="Agentur-Pitch" data-en="Agency Pitch">Agentur-Pitch</span><span class="role-tag" data-lang data-de="Paid Strategie (Meta)" data-en="Paid Strategy (Meta)">Paid Strategie (Meta)</span><span class="role-tag" data-lang data-de="Funnel-Aufbau" data-en="Funnel Build-up">Funnel-Aufbau</span><span class="role-tag" data-lang data-de="Projektverantwortung" data-en="Project Responsibility">Projektverantwortung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-funnel">
@@ -662,23 +683,23 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Projektmanagement · Website</p><p class="proj-title">Website-Relaunch — Hommage Luxury Hotels Collection</p><p class="proj-subtitle">Magazin-Framework, bessere Usability, kürzerer Buchungsprozess</p></div>
+            <div><p class="proj-cat" data-lang data-de="Projektmanagement · Website" data-en="Project Management · Website">Projektmanagement · Website</p><p class="proj-title" data-lang data-de="Website-Relaunch — Hommage Luxury Hotels Collection" data-en="Website Relaunch — Hommage Luxury Hotels Collection">Website-Relaunch — Hommage Luxury Hotels Collection</p><p class="proj-subtitle" data-lang data-de="Magazin-Framework, bessere Usability, kürzerer Buchungsprozess" data-en="Magazine framework, improved usability, shorter booking process">Magazin-Framework, bessere Usability, kürzerer Buchungsprozess</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">Veraltete Userführung, zu langer Buchungsprozess, kein visueller Ausdruck des Markenwerts „stiller Luxus". Conversion-Rate und Sichtbarkeit sollten verbessert werden.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Projektverantwortung für den kompletten Relaunch. Steuerung von Entwicklungs-, UX/Design- und SEO-Agentur. CI-Konformität sichergestellt, aktive Mitarbeit im CMS (Typo3).</p>
-                <div><span class="role-tag">Projektleitung</span><span class="role-tag">Agentursteuerung</span><span class="role-tag">UX & CI-Review</span><span class="role-tag">Typo3</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="Veraltete Userführung, zu langer Buchungsprozess, kein visueller Ausdruck des Markenwerts „stiller Luxus". Conversion-Rate und Sichtbarkeit sollten verbessert werden." data-en="Outdated user navigation, a booking process that was too long, and no visual expression of the brand value "quiet luxury". Conversion rate and visibility needed improvement.">Veraltete Userführung, zu langer Buchungsprozess, kein visueller Ausdruck des Markenwerts „stiller Luxus". Conversion-Rate und Sichtbarkeit sollten verbessert werden.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Projektverantwortung für den kompletten Relaunch. Steuerung von Entwicklungs-, UX/Design- und SEO-Agentur. CI-Konformität sichergestellt, aktive Mitarbeit im CMS (Typo3)." data-en="Project responsibility for the full relaunch. Management of development, UX/design and SEO agencies. CI compliance ensured, active involvement in the CMS (Typo3).">Projektverantwortung für den kompletten Relaunch. Steuerung von Entwicklungs-, UX/Design- und SEO-Agentur. CI-Konformität sichergestellt, aktive Mitarbeit im CMS (Typo3).</p>
+                <div><span class="role-tag" data-lang data-de="Projektleitung" data-en="Project Lead">Projektleitung</span><span class="role-tag" data-lang data-de="Agentursteuerung" data-en="Agency Management">Agentursteuerung</span><span class="role-tag" data-lang data-de="UX & CI-Review" data-en="UX & CI Review">UX & CI-Review</span><span class="role-tag">Typo3</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-phases">
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title">Ziele</span><br>Mehr Conversions, bessere Usability, Sichtbarkeit</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title">Ansatz</span><br>Magazinstil, kürzerer Buchungsprozess, Luxus erlebbar machen</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title">Team</span><br>Entwicklung, UX/Design & SEO-Agentur koordiniert</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Ziele" data-en="Goals">Ziele</span><br>Mehr Conversions, bessere Usability, Sichtbarkeit</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Ansatz" data-en="Approach">Ansatz</span><br>Magazinstil, kürzerer Buchungsprozess, Luxus erlebbar machen</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Team" data-en="Team">Team</span><br>Entwicklung, UX/Design & SEO-Agentur koordiniert</div></div>
                 </div>
               </div>
             </div>
@@ -687,24 +708,24 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Content · Produktion</p><p class="proj-title">Content Production — Shooting-Koordination in den Hotels</p><p class="proj-subtitle">Koordination von Foto- & Video-Shootings mit externem Content-Team</p></div>
+            <div><p class="proj-cat" data-lang data-de="Content · Produktion" data-en="Content · Production">Content · Produktion</p><p class="proj-title" data-lang data-de="Content Production — Shooting-Koordination in den Hotels" data-en="Content Production — Shooting Coordination at the Hotels">Content Production — Shooting-Koordination in den Hotels</p><p class="proj-subtitle" data-lang data-de="Koordination von Foto- & Video-Shootings mit externem Content-Team" data-en="Coordination of photo & video shoots with external content team">Koordination von Foto- & Video-Shootings mit externem Content-Team</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">Koordination von Content-Produktionen in den Hotels mit externem Team (Producer, Fotograf, Videograf) für Social, Website und Werbemittel.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Shootingpläne, Begleitung vor Ort, Erstsichtung und Qualitätsprüfung vor finaler VP-Freigabe zur Reduktion von Korrekturschleifen.</p>
-                <div><span class="role-tag">Shootingplanung</span><span class="role-tag">Vor-Ort-Begleitung</span><span class="role-tag">Qualitätssicherung</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="Koordination von Content-Produktionen in den Hotels mit externem Team (Producer, Fotograf, Videograf) für Social, Website und Werbemittel." data-en="Coordination of content productions at the hotels with an external team (producer, photographer, videographer) for social media, website and advertising materials.">Koordination von Content-Produktionen in den Hotels mit externem Team (Producer, Fotograf, Videograf) für Social, Website und Werbemittel.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Shootingpläne, Begleitung vor Ort, Erstsichtung und Qualitätsprüfung vor finaler VP-Freigabe zur Reduktion von Korrekturschleifen." data-en="Shooting plans, on-site accompaniment, initial review and quality check before final VP approval to reduce correction loops.">Shootingpläne, Begleitung vor Ort, Erstsichtung und Qualitätsprüfung vor finaler VP-Freigabe zur Reduktion von Korrekturschleifen.</p>
+                <div><span class="role-tag" data-lang data-de="Shootingplanung" data-en="Shoot Planning">Shootingplanung</span><span class="role-tag" data-lang data-de="Vor-Ort-Begleitung" data-en="On-site Support">Vor-Ort-Begleitung</span><span class="role-tag" data-lang data-de="Qualitätssicherung" data-en="Quality Assurance">Qualitätssicherung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-grid">
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🗓</div><div class="viz-grid-label">Shootingplanung</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🗓</div><div class="viz-grid-label" data-lang data-de="Shootingplanung" data-en="Shoot Planning">Shootingplanung</div></div>
                   <div class="viz-grid-item"><div class="viz-grid-icon">📍</div><div class="viz-grid-label">Vor-Ort</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🎬</div><div class="viz-grid-label">Content­review</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">✅</div><div class="viz-grid-label">Freigabe­prozess</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🎬</div><div class="viz-grid-label" data-lang data-de="Content­review" data-en="Content Review">Content­review</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">✅</div><div class="viz-grid-label" data-lang data-de="Freigabe­prozess" data-en="Approval Process">Freigabe­prozess</div></div>
                 </div>
               </div>
             </div>
@@ -717,30 +738,30 @@
     <!-- KERBHOLZ PROJECTS -->
     <div class="proj-block" id="proj-kerbholz">
       <div class="proj-block-header">
-        <p class="proj-block-name">KERBHOLZ / Vierfreunde GmbH</p>
-        <p class="proj-block-meta">Jan – Dez 2022 · Social Media Managerin</p>
+        <p class="proj-block-name" data-key="proj-kerb-name">KERBHOLZ / Vierfreunde GmbH</p>
+        <p class="proj-block-meta" data-lang data-de="Jan – Dez 2022 · Social Media Managerin" data-en="Jan – Dec 2022 · Social Media Manager">Jan – Dez 2022 · Social Media Managerin</p>
       </div>
       <div class="proj-list">
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Content · Paid</p><p class="proj-title">UGC-Etablierung für den Paid-Bereich</p><p class="proj-subtitle">Aufbau eines strukturierten UGC-Prozesses inkl. Skripterstellung</p></div>
+            <div><p class="proj-cat" data-lang data-de="Content · Paid" data-en="Content · Paid">Content · Paid</p><p class="proj-title" data-lang data-de="UGC-Etablierung für den Paid-Bereich" data-en="UGC Establishment for Paid Campaigns">UGC-Etablierung für den Paid-Bereich</p><p class="proj-subtitle" data-lang data-de="Aufbau eines strukturierten UGC-Prozesses inkl. Skripterstellung" data-en="Building a structured UGC process incl. script creation">Aufbau eines strukturierten UGC-Prozesses inkl. Skripterstellung</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">User Generated Content sollte systematisch für Paid-Kampagnen nutzbar gemacht werden — bisher kein strukturierter Prozess vorhanden.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Prozess entwickelt, Skripte für UGC-Creator:innen erstellt und deren Umsetzung begleitet. Integration in den Paid-Content-Workflow.</p>
-                <div><span class="role-tag">UGC-Strategie</span><span class="role-tag">Skripterstellung</span><span class="role-tag">Paid Content</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="User Generated Content sollte systematisch für Paid-Kampagnen nutzbar gemacht werden — bisher kein strukturierter Prozess vorhanden." data-en="User generated content needed to be systematically made available for paid campaigns — no structured process existed previously.">User Generated Content sollte systematisch für Paid-Kampagnen nutzbar gemacht werden — bisher kein strukturierter Prozess vorhanden.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Prozess entwickelt, Skripte für UGC-Creator:innen erstellt und deren Umsetzung begleitet. Integration in den Paid-Content-Workflow." data-en="Process developed, scripts created for UGC creators and their execution guided. Integration into the paid content workflow.">Prozess entwickelt, Skripte für UGC-Creator:innen erstellt und deren Umsetzung begleitet. Integration in den Paid-Content-Workflow.</p>
+                <div><span class="role-tag" data-lang data-de="UGC-Strategie" data-en="UGC Strategy">UGC-Strategie</span><span class="role-tag" data-lang data-de="Skripterstellung" data-en="Script Creation">Skripterstellung</span><span class="role-tag" data-lang data-de="Paid Content" data-en="Paid Content">Paid Content</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-phases">
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title">Prozess</span><br>Creator-Recherche → Briefing → Skript → Produktion</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title">Output</span><br>Authentischer Content für Paid-Kampagnen</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title">Ziel</span><br>Höhere Performance durch glaubwürdige Formate</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Prozess" data-en="Process">Prozess</span><br>Creator-Recherche → Briefing → Skript → Produktion</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Output" data-en="Output">Output</span><br>Authentischer Content für Paid-Kampagnen</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Ziel" data-en="Goal">Ziel</span><br>Höhere Performance durch glaubwürdige Formate</div></div>
                 </div>
               </div>
             </div>
@@ -749,24 +770,24 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Social Media · Kanalaufbau</p><p class="proj-title">TikTok-Kanal — Aufbau von Null</p><p class="proj-subtitle">Neuer Kanal mit Fokus auf Produkt & Employer Branding — KPI: Views</p></div>
+            <div><p class="proj-cat" data-lang data-de="Social Media · Kanalaufbau" data-en="Social Media · Channel Build">Social Media · Kanalaufbau</p><p class="proj-title" data-lang data-de="TikTok-Kanal — Aufbau von Null" data-en="TikTok Channel — Built from Scratch">TikTok-Kanal — Aufbau von Null</p><p class="proj-subtitle" data-lang data-de="Neuer Kanal mit Fokus auf Produkt & Employer Branding — KPI: Views" data-en="New channel focused on product & employer branding — KPI: views">Neuer Kanal mit Fokus auf Produkt & Employer Branding — KPI: Views</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">KERBHOLZ war auf TikTok nicht präsent. Großes Potenzial für eine jüngere Zielgruppe — sowohl für Produkt als auch für Arbeitgebermarke.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Strategieentwicklung, Content-Konzept und operativer Aufbau. Zwei Säulen: Produkt-Storytelling und KERBHOLZ als Arbeitgeber.</p>
-                <div><span class="role-tag">Kanalstrategie</span><span class="role-tag">TikTok-Aufbau</span><span class="role-tag">Employer Branding</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="KERBHOLZ war auf TikTok nicht präsent. Großes Potenzial für eine jüngere Zielgruppe — sowohl für Produkt als auch für Arbeitgebermarke." data-en="KERBHOLZ had no presence on TikTok. Great potential for a younger target group — both for the product and the employer brand.">KERBHOLZ war auf TikTok nicht präsent. Großes Potenzial für eine jüngere Zielgruppe — sowohl für Produkt als auch für Arbeitgebermarke.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Strategieentwicklung, Content-Konzept und operativer Aufbau. Zwei Säulen: Produkt-Storytelling und KERBHOLZ als Arbeitgeber." data-en="Strategy development, content concept and operational build-up. Two pillars: product storytelling and KERBHOLZ as an employer.">Strategieentwicklung, Content-Konzept und operativer Aufbau. Zwei Säulen: Produkt-Storytelling und KERBHOLZ als Arbeitgeber.</p>
+                <div><span class="role-tag" data-lang data-de="Kanalstrategie" data-en="Channel Strategy">Kanalstrategie</span><span class="role-tag" data-lang data-de="TikTok-Aufbau" data-en="TikTok Build-up">TikTok-Aufbau</span><span class="role-tag" data-lang data-de="Employer Branding" data-en="Employer Branding">Employer Branding</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-grid">
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🎯</div><div class="viz-grid-label">Produkt­fokus</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🏢</div><div class="viz-grid-label">Employer Branding</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">📈</div><div class="viz-grid-label">KPI: Views</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🚀</div><div class="viz-grid-label">Start von Null</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🎯</div><div class="viz-grid-label" data-lang data-de="Produkt­fokus" data-en="Product Focus">Produkt­fokus</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🏢</div><div class="viz-grid-label" data-lang data-de="Employer Branding" data-en="Employer Branding">Employer Branding</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">📈</div><div class="viz-grid-label" data-lang data-de="KPI: Views" data-en="KPI: Views">KPI: Views</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🚀</div><div class="viz-grid-label" data-lang data-de="Start von Null" data-en="Built from Scratch">Start von Null</div></div>
                 </div>
               </div>
             </div>
@@ -775,17 +796,17 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Social Media · Organic</p><p class="proj-title">Organic Social — KPI-Erweiterung & Engagement-Optimierung</p><p class="proj-subtitle">Datenbasierte Content-Optimierung zur Steigerung des Engagements</p></div>
+            <div><p class="proj-cat" data-lang data-de="Social Media · Organic" data-en="Social Media · Organic">Social Media · Organic</p><p class="proj-title" data-lang data-de="Organic Social — KPI-Erweiterung & Engagement-Optimierung" data-en="Organic Social — KPI Expansion & Engagement Optimisation">Organic Social — KPI-Erweiterung & Engagement-Optimierung</p><p class="proj-subtitle" data-lang data-de="Datenbasierte Content-Optimierung zur Steigerung des Engagements" data-en="Data-driven content optimisation to increase engagement">Datenbasierte Content-Optimierung zur Steigerung des Engagements</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">KPI-Set um relevante Engagement-Metriken erweitert, um Content-Entscheidungen datenbasiert treffen zu können.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">KPI-Definition, Analyse der Bestandsperformance, Ableitung von Content-Anpassungen. Content für organische und Paid-Kanäle produziert.</p>
-                <div><span class="role-tag">KPI-Definition</span><span class="role-tag">Content-Analyse</span><span class="role-tag">Engagement-Optimierung</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="KPI-Set um relevante Engagement-Metriken erweitert, um Content-Entscheidungen datenbasiert treffen zu können." data-en="KPI set expanded with relevant engagement metrics to enable data-driven content decisions.">KPI-Set um relevante Engagement-Metriken erweitert, um Content-Entscheidungen datenbasiert treffen zu können.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="KPI-Definition, Analyse der Bestandsperformance, Ableitung von Content-Anpassungen. Content für organische und Paid-Kanäle produziert." data-en="KPI definition, analysis of existing performance, derivation of content adjustments. Content produced for organic and paid channels.">KPI-Definition, Analyse der Bestandsperformance, Ableitung von Content-Anpassungen. Content für organische und Paid-Kanäle produziert.</p>
+                <div><span class="role-tag" data-lang data-de="KPI-Definition" data-en="KPI Definition">KPI-Definition</span><span class="role-tag" data-lang data-de="Content-Analyse" data-en="Content Analysis">Content-Analyse</span><span class="role-tag" data-lang data-de="Engagement-Optimierung" data-en="Engagement Optimisation">Engagement-Optimierung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-bars">
@@ -806,24 +827,24 @@
     <!-- GROUPM PROJECTS -->
     <div class="proj-block" id="proj-groupm">
       <div class="proj-block-header">
-        <p class="proj-block-name">GroupM / mSTUDIO GmbH</p>
-        <p class="proj-block-meta">Okt 2020 – Dez 2021 · Junior → Consultant Influencer Marketing</p>
+        <p class="proj-block-name" data-key="proj-gm-name">GroupM / mSTUDIO GmbH</p>
+        <p class="proj-block-meta" data-lang data-de="Okt 2020 – Dez 2021 · Junior → Consultant Influencer Marketing" data-en="Oct 2020 – Dec 2021 · Junior → Consultant Influencer Marketing">Okt 2020 – Dez 2021 · Junior → Consultant Influencer Marketing</p>
       </div>
       <div class="proj-list">
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Kampagnenmanagement · FMCG / Automotive / Beauty</p><p class="proj-title">Influencer-Kampagnen für internationale Großkunden</p><p class="proj-subtitle">End-to-End-Betreuung — von Konzept bis Reporting, Fokus Awareness</p></div>
+            <div><p class="proj-cat" data-lang data-de="Kampagnenmanagement · FMCG / Automotive / Beauty" data-en="Campaign Management · FMCG / Automotive / Beauty">Kampagnenmanagement · FMCG / Automotive / Beauty</p><p class="proj-title" data-lang data-de="Influencer-Kampagnen für internationale Großkunden" data-en="Influencer Campaigns for International Key Clients">Influencer-Kampagnen für internationale Großkunden</p><p class="proj-subtitle" data-lang data-de="End-to-End-Betreuung — von Konzept bis Reporting, Fokus Awareness" data-en="End-to-end management — from concept to reporting, focus on awareness">End-to-End-Betreuung — von Konzept bis Reporting, Fokus Awareness</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">Betreuung eines breiten Kundenmixes aus FMCG, Automotive und Beauty (u.a. Mars, Toyota Deutschland, Kärcher) mit Schwerpunkt Awareness-Kampagnen.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Vollständige Kampagnensteuerung: Konzept, Budgetkalkulation, Vertragsverhandlung, Content-Briefing, QS, Distribution, Endreporting mit Learnings.</p>
-                <div><span class="role-tag">Konzept & Briefing</span><span class="role-tag">Budgetkalkulation</span><span class="role-tag">Vertragsverhandlung</span><span class="role-tag">Reporting</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="Betreuung eines breiten Kundenmixes aus FMCG, Automotive und Beauty (u.a. Mars, Toyota Deutschland, Kärcher) mit Schwerpunkt Awareness-Kampagnen." data-en="Managing a broad client mix from FMCG, automotive and beauty (incl. Mars, Toyota Germany, Kärcher) with a focus on awareness campaigns.">Betreuung eines breiten Kundenmixes aus FMCG, Automotive und Beauty (u.a. Mars, Toyota Deutschland, Kärcher) mit Schwerpunkt Awareness-Kampagnen.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Vollständige Kampagnensteuerung: Konzept, Budgetkalkulation, Vertragsverhandlung, Content-Briefing, QS, Distribution, Endreporting mit Learnings." data-en="Full campaign management: concept, budget planning, contract negotiation, content briefing, QA, distribution, final reporting with learnings.">Vollständige Kampagnensteuerung: Konzept, Budgetkalkulation, Vertragsverhandlung, Content-Briefing, QS, Distribution, Endreporting mit Learnings.</p>
+                <div><span class="role-tag" data-lang data-de="Konzept & Briefing" data-en="Concept & Briefing">Konzept & Briefing</span><span class="role-tag" data-lang data-de="Budgetkalkulation" data-en="Budget Calculation">Budgetkalkulation</span><span class="role-tag" data-lang data-de="Vertragsverhandlung" data-en="Contract Negotiation">Vertragsverhandlung</span><span class="role-tag">Reporting</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-funnel">
@@ -841,23 +862,23 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Inhouse-Produkt · Prozessoptimierung</p><p class="proj-title">Head of INCA — Influencer Marketing Tool GroupM</p><p class="proj-subtitle">Tool-Verantwortung & Weiterentwicklung mit dem globalen Team</p></div>
+            <div><p class="proj-cat" data-lang data-de="Inhouse-Produkt · Prozessoptimierung" data-en="In-house Product · Process Optimisation">Inhouse-Produkt · Prozessoptimierung</p><p class="proj-title" data-lang data-de="Head of INCA — Influencer Marketing Tool GroupM" data-en="Head of INCA — Influencer Marketing Tool GroupM">Head of INCA — Influencer Marketing Tool GroupM</p><p class="proj-subtitle" data-lang data-de="Tool-Verantwortung & Weiterentwicklung mit dem globalen Team" data-en="Tool responsibility & further development with the global team">Tool-Verantwortung & Weiterentwicklung mit dem globalen Team</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Ausgangslage</p>
-                <p class="blk-text">INCA ist das eigenentwickelte Influencer-Marketing-Tool der GroupM. Ab Juli 2021 übernahm ich intern die Rolle als Head of INCA für den deutschen Markt.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Koordination aller Kundenanfragen, Austausch mit globalem Team, Adaption für den DE-Markt. Prozessoptimierung via RACI-Modell & How2Book. Monatliches GF-Reporting. Ziel: mehr Kampagnen über INCA = mehr Umsatz.</p>
-                <div><span class="role-tag">Tool-Verantwortung</span><span class="role-tag">Globale Zusammenarbeit</span><span class="role-tag">Prozessoptimierung</span><span class="role-tag">GF-Reporting</span></div>
+                <p class="blk-label" data-lang data-de="Ausgangslage" data-en="Background">Ausgangslage</p>
+                <p class="blk-text" data-lang data-de="INCA ist das eigenentwickelte Influencer-Marketing-Tool der GroupM. Ab Juli 2021 übernahm ich intern die Rolle als Head of INCA für den deutschen Markt." data-en="INCA is GroupM's in-house influencer marketing tool. From July 2021, I took on the internal role of Head of INCA for the German market.">INCA ist das eigenentwickelte Influencer-Marketing-Tool der GroupM. Ab Juli 2021 übernahm ich intern die Rolle als Head of INCA für den deutschen Markt.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Koordination aller Kundenanfragen, Austausch mit globalem Team, Adaption für den DE-Markt. Prozessoptimierung via RACI-Modell & How2Book. Monatliches GF-Reporting. Ziel: mehr Kampagnen über INCA = mehr Umsatz." data-en="Coordination of all client enquiries, exchange with the global team, adaptation for the German market. Process optimisation via RACI model & How2Book. Monthly management reporting. Goal: more campaigns via INCA = more revenue.">Koordination aller Kundenanfragen, Austausch mit globalem Team, Adaption für den DE-Markt. Prozessoptimierung via RACI-Modell & How2Book. Monatliches GF-Reporting. Ziel: mehr Kampagnen über INCA = mehr Umsatz.</p>
+                <div><span class="role-tag" data-lang data-de="Tool-Verantwortung" data-en="Tool Responsibility">Tool-Verantwortung</span><span class="role-tag" data-lang data-de="Globale Zusammenarbeit" data-en="Global Collaboration">Globale Zusammenarbeit</span><span class="role-tag" data-lang data-de="Prozessoptimierung" data-en="Process Optimisation">Prozessoptimierung</span><span class="role-tag" data-lang data-de="GF-Reporting" data-en="Management Reporting">GF-Reporting</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-phases">
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title">Global</span><br>Austausch mit internationalem Team, Adaption für DE</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title">Prozesse</span><br>RACI-Modell & How2Book vereinfacht Buchungsabläufe</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title">Ziel</span><br>Mehr Kampagnen über Tool → mehr Umsatz</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Global" data-en="Global">Global</span><br>Austausch mit internationalem Team, Adaption für DE</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Prozesse" data-en="Processes">Prozesse</span><br>RACI-Modell & How2Book vereinfacht Buchungsabläufe</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Ziel" data-en="Goal">Ziel</span><br>Mehr Kampagnen über Tool → mehr Umsatz</div></div>
                 </div>
               </div>
             </div>
@@ -870,31 +891,31 @@
     <!-- FREELANCE PROJECTS -->
     <div class="proj-block" id="proj-freelance">
       <div class="proj-block-header">
-        <p class="proj-block-name">Freelance Digital Marketing</p>
-        <p class="proj-block-meta">Jan 2023 – heute · Self-employed</p>
+        <p class="proj-block-name" data-key="proj-fl-name">Freelance Digital Marketing</p>
+        <p class="proj-block-meta" data-lang data-de="Jan 2023 – heute · Self-employed" data-en="Jan 2023 – present · Self-employed">Jan 2023 – heute · Self-employed</p>
       </div>
       <div class="proj-list">
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Influencer Marketing · Einmalige Kampagne</p><p class="proj-title">klang2 — Influencer-Konzept für ein Gesellschaftsspiel</p><p class="proj-subtitle">Einmaliges Konzept zur Etablierung in relevanten Zielgruppen</p></div>
+            <div><p class="proj-cat" data-lang data-de="Influencer Marketing · Einmalige Kampagne" data-en="Influencer Marketing · One-off Campaign">Influencer Marketing · Einmalige Kampagne</p><p class="proj-title" data-lang data-de="klang2 — Influencer-Konzept für ein Gesellschaftsspiel" data-en="klang2 — Influencer Concept for a Board Game">klang2 — Influencer-Konzept für ein Gesellschaftsspiel</p><p class="proj-subtitle" data-lang data-de="Einmaliges Konzept zur Etablierung in relevanten Zielgruppen" data-en="One-off concept to establish presence in relevant target groups">Einmaliges Konzept zur Etablierung in relevanten Zielgruppen</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">Entwicklung eines Influencer-Konzeptes für das Spiel klang2 — Aufmerksamkeit generieren und Produkt in relevanten Zielgruppen etablieren.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">ZG-Definition, passende Creator-Profile, Kampagnenansatz, Content-Empfehlungen und KPI-Rahmen.</p>
-                <div><span class="role-tag">Konzeptentwicklung</span><span class="role-tag">ZG-Analyse</span><span class="role-tag">Creator-Strategie</span><span class="role-tag">KPI-Framework</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="Entwicklung eines Influencer-Konzeptes für das Spiel klang2 — Aufmerksamkeit generieren und Produkt in relevanten Zielgruppen etablieren." data-en="Development of an influencer concept for the game klang2 — generating awareness and establishing the product in relevant target groups.">Entwicklung eines Influencer-Konzeptes für das Spiel klang2 — Aufmerksamkeit generieren und Produkt in relevanten Zielgruppen etablieren.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="ZG-Definition, passende Creator-Profile, Kampagnenansatz, Content-Empfehlungen und KPI-Rahmen." data-en="Target group definition, suitable creator profiles, campaign approach, content recommendations and KPI framework.">ZG-Definition, passende Creator-Profile, Kampagnenansatz, Content-Empfehlungen und KPI-Rahmen.</p>
+                <div><span class="role-tag" data-lang data-de="Konzeptentwicklung" data-en="Concept Development">Konzeptentwicklung</span><span class="role-tag" data-lang data-de="ZG-Analyse" data-en="Target Group Analysis">ZG-Analyse</span><span class="role-tag" data-lang data-de="Creator-Strategie" data-en="Creator Strategy">Creator-Strategie</span><span class="role-tag" data-lang data-de="KPI-Framework" data-en="KPI Framework">KPI-Framework</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-grid">
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🎯</div><div class="viz-grid-label">ZG-Definition</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">🤝</div><div class="viz-grid-label">Creator-Auswahl</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">💡</div><div class="viz-grid-label">Content-Konzept</div></div>
-                  <div class="viz-grid-item"><div class="viz-grid-icon">📊</div><div class="viz-grid-label">KPI-Rahmen</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🎯</div><div class="viz-grid-label" data-lang data-de="ZG-Definition" data-en="Target Group Definition">ZG-Definition</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">🤝</div><div class="viz-grid-label" data-lang data-de="Creator-Auswahl" data-en="Creator Selection">Creator-Auswahl</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">💡</div><div class="viz-grid-label" data-lang data-de="Content-Konzept" data-en="Content Concept">Content-Konzept</div></div>
+                  <div class="viz-grid-item"><div class="viz-grid-icon">📊</div><div class="viz-grid-label" data-lang data-de="KPI-Rahmen" data-en="KPI Framework">KPI-Rahmen</div></div>
                 </div>
               </div>
             </div>
@@ -903,23 +924,23 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Social Media Management · Langzeit · <a href="https://www.instagram.com/minemina_fashion/" target="_blank" style="color:var(--accent);text-decoration:underline;">@minemina_fashion ↗</a></p><p class="proj-title">mine mina — Social Media Managerin</p><p class="proj-subtitle">Laufende Betreuung seit Januar 2023: Strategie, Content, Redaktion, Paid-Beratung</p></div>
+            <div><p class="proj-cat" data-lang data-de="Social Media Management · Langzeit" data-en="Social Media Management · Long-term">Social Media Management · Langzeit · <a href="https://www.instagram.com/minemina_fashion/" target="_blank" style="color:var(--accent);text-decoration:underline;">@minemina_fashion ↗</a></p><p class="proj-title" data-lang data-de="mine mina — Social Media Managerin" data-en="mine mina — Social Media Manager">mine mina — Social Media Managerin</p><p class="proj-subtitle" data-lang data-de="Laufende Betreuung seit Januar 2023: Strategie, Content, Redaktion, Paid-Beratung" data-en="Ongoing support since January 2023: strategy, content, editorial, paid consulting">Laufende Betreuung seit Januar 2023: Strategie, Content, Redaktion, Paid-Beratung</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">Nachhaltiges Modestart-up aus Hamburg — kontinuierliche Begleitung als freie Social Media Managerin seit Januar 2023.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Content-Strategie (jährlich KPI-basiert angepasst), Redaktionspläne, Videoschnitt, Bildbearbeitung. Beratend bei Produktentwicklung, Marketingaktivitäten und Paid-Strategie.</p>
-                <div><span class="role-tag">Content-Strategie</span><span class="role-tag">Redaktionsplanung</span><span class="role-tag">Videoschnitt</span><span class="role-tag">Paid-Beratung</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="Nachhaltiges Modestart-up aus Hamburg — kontinuierliche Begleitung als freie Social Media Managerin seit Januar 2023." data-en="Sustainable fashion start-up from Hamburg — ongoing support as a freelance social media manager since January 2023.">Nachhaltiges Modestart-up aus Hamburg — kontinuierliche Begleitung als freie Social Media Managerin seit Januar 2023.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Content-Strategie (jährlich KPI-basiert angepasst), Redaktionspläne, Videoschnitt, Bildbearbeitung. Beratend bei Produktentwicklung, Marketingaktivitäten und Paid-Strategie." data-en="Content strategy (adjusted annually based on KPIs), editorial plans, video editing, image processing. Advisory role for product development, marketing activities and paid strategy.">Content-Strategie (jährlich KPI-basiert angepasst), Redaktionspläne, Videoschnitt, Bildbearbeitung. Beratend bei Produktentwicklung, Marketingaktivitäten und Paid-Strategie.</p>
+                <div><span class="role-tag" data-lang data-de="Content-Strategie" data-en="Content Strategy">Content-Strategie</span><span class="role-tag" data-lang data-de="Redaktionsplanung" data-en="Editorial Planning">Redaktionsplanung</span><span class="role-tag" data-lang data-de="Videoschnitt" data-en="Video Editing">Videoschnitt</span><span class="role-tag" data-lang data-de="Paid-Beratung" data-en="Paid Consulting">Paid-Beratung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-tl">
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#3D7A63"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">2023</span><br>Content-Strategie entwickelt, Kanäle aufgebaut</div></div>
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#6B63A8"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">2024</span><br>Strategie angepasst, Paid-Beratung ergänzt</div></div>
-                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#C4623A"></div></div><div class="viz-tl-text"><span class="viz-tl-phase">2025+</span><br>KPI-basierte Optimierung & Trendintegration</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#3D7A63"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="2023" data-en="2023">2023</span><br>Content-Strategie entwickelt, Kanäle aufgebaut</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#6B63A8"></div><div class="viz-tl-connector"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="2024" data-en="2024">2024</span><br>Strategie angepasst, Paid-Beratung ergänzt</div></div>
+                  <div class="viz-tl-item"><div class="viz-tl-line"><div class="viz-tl-dot" style="background:#C4623A"></div></div><div class="viz-tl-text"><span class="viz-tl-phase" data-lang data-de="2025+" data-en="2025+">2025+</span><br>KPI-basierte Optimierung & Trendintegration</div></div>
                 </div>
               </div>
             </div>
@@ -928,23 +949,23 @@
 
         <div class="proj-card">
           <div class="proj-header" onclick="toggleProj(this)">
-            <div><p class="proj-cat">Social Media · Immobilien · Jan – Mai 2023</p><p class="proj-title">Carina Communications — Content-Strategie Immobilienmakler</p><p class="proj-subtitle">Aufbau einer Kanalstrategie und Redaktionsplanung</p></div>
+            <div><p class="proj-cat" data-lang data-de="Social Media · Immobilien · Jan – Mai 2023" data-en="Social Media · Real Estate · Jan – May 2023">Social Media · Immobilien · Jan – Mai 2023</p><p class="proj-title" data-lang data-de="Carina Communications — Content-Strategie Immobilienmakler" data-en="Carina Communications — Content Strategy for Real Estate Agent">Carina Communications — Content-Strategie Immobilienmakler</p><p class="proj-subtitle" data-lang data-de="Aufbau einer Kanalstrategie und Redaktionsplanung" data-en="Building a channel strategy and editorial planning">Aufbau einer Kanalstrategie und Redaktionsplanung</p></div>
             <span class="proj-chevron">⌄</span>
           </div>
           <div class="proj-body">
             <div class="proj-content">
               <div class="proj-text">
-                <p class="blk-label">Aufgabe</p>
-                <p class="blk-text">Passgenaue Social-Media-Strategie für einen Immobilienmakler als Kunde der Kölner Agentur Carina Communications.</p>
-                <p class="blk-label">Meine Rolle</p>
-                <p class="blk-text">Konzeption und Aufsetzen der Content-Strategie, laufende Kanalbetreuung, Erstellung und Umsetzung der Redaktionspläne.</p>
-                <div><span class="role-tag">Content-Strategie</span><span class="role-tag">Kanalbetreuung</span><span class="role-tag">Redaktionsplanung</span></div>
+                <p class="blk-label" data-lang data-de="Aufgabe" data-en="Task">Aufgabe</p>
+                <p class="blk-text" data-lang data-de="Passgenaue Social-Media-Strategie für einen Immobilienmakler als Kunde der Kölner Agentur Carina Communications." data-en="A tailored social media strategy for a real estate agent as a client of the Cologne agency Carina Communications.">Passgenaue Social-Media-Strategie für einen Immobilienmakler als Kunde der Kölner Agentur Carina Communications.</p>
+                <p class="blk-label" data-lang data-de="Meine Rolle" data-en="My Role">Meine Rolle</p>
+                <p class="blk-text" data-lang data-de="Konzeption und Aufsetzen der Content-Strategie, laufende Kanalbetreuung, Erstellung und Umsetzung der Redaktionspläne." data-en="Conception and set-up of the content strategy, ongoing channel management, creation and implementation of editorial plans.">Konzeption und Aufsetzen der Content-Strategie, laufende Kanalbetreuung, Erstellung und Umsetzung der Redaktionspläne.</p>
+                <div><span class="role-tag" data-lang data-de="Content-Strategie" data-en="Content Strategy">Content-Strategie</span><span class="role-tag" data-lang data-de="Kanalbetreuung" data-en="Channel Management">Kanalbetreuung</span><span class="role-tag" data-lang data-de="Redaktionsplanung" data-en="Editorial Planning">Redaktionsplanung</span></div>
               </div>
               <div class="proj-viz">
                 <div class="viz-phases">
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title">Konzept</span><br>Strategie & Positionierung für Immobilien-Nische</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title">Betrieb</span><br>Redaktionsplanung, Posting, Community</div></div>
-                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title">Reporting</span><br>Monatliche KPI-Auswertung & Empfehlungen</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#3D7A63"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Konzept" data-en="Concept">Konzept</span><br>Strategie & Positionierung für Immobilien-Nische</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#6B63A8"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Betrieb" data-en="Operations">Betrieb</span><br>Redaktionsplanung, Posting, Community</div></div>
+                  <div class="viz-phase"><div class="viz-phase-dot" style="background:#C4623A"></div><div class="viz-phase-text"><span class="viz-phase-title" data-lang data-de="Reporting" data-en="Reporting">Reporting</span><br>Monatliche KPI-Auswertung & Empfehlungen</div></div>
                 </div>
               </div>
             </div>
@@ -957,38 +978,38 @@
 
   <!-- REFERENZEN -->
   <section class="section" id="referenzen">
-    <p class="section-eyebrow">Referenzen</p>
+    <p class="section-eyebrow" data-lang data-de="Referenzen" data-en="References">Referenzen</p>
     <div class="ref-grid">
       <div class="ref-card">
         <p class="ref-quote">Sie gestaltete maßgeblich die Weiterentwicklung unserer Markenstrategie und konzipierte einen innovativen Marketingansatz für das Grand Tirolia Kitzbühel, der zur erfolgreichen Erschließung neuer Zielgruppen führte.</p>
         <p class="ref-name">Oliver Stotz</p>
-        <p class="ref-role">VP Marketing & E-Commerce · HON-Service GmbH</p>
+        <p class="ref-role" data-lang data-de="VP Marketing & E-Commerce · HON-Service GmbH" data-en="VP Marketing & E-Commerce · HON-Service GmbH">VP Marketing & E-Commerce · HON-Service GmbH</p>
       </div>
       <div class="ref-card">
         <p class="ref-quote">Das gesamte Social Media Management ist bei Marie stets in verantwortungsvollen Händen. Sie hat mit ihrer Flexibilität und ihrer sympathischen, kommunikativen und offenen Art überzeugt.</p>
         <p class="ref-name">Maren Pfähler</p>
-        <p class="ref-role">Geschäftsführerin · MoLu Vertriebs GmbH (mine mina)</p>
+        <p class="ref-role" data-lang data-de="Geschäftsführerin · MoLu Vertriebs GmbH (mine mina)" data-en="Managing Director · MoLu Vertriebs GmbH (mine mina)">Geschäftsführerin · MoLu Vertriebs GmbH (mine mina)</p>
       </div>
       <div class="ref-card">
         <p class="ref-quote">Das Social Media Management war bei Marie stets in verantwortungsvollen Händen, wodurch sie unser Team entlastet und gleichzeitig mit ihrer sympathischen sowie kommunikativen Art bereichert hat.</p>
         <p class="ref-name">Carina Birnbacher</p>
-        <p class="ref-role">Geschäftsführerin · Carina Communications GmbH</p>
+        <p class="ref-role" data-lang data-de="Geschäftsführerin · Carina Communications GmbH" data-en="Managing Director · Carina Communications GmbH">Geschäftsführerin · Carina Communications GmbH</p>
       </div>
     </div>
   </section>
 
   <!-- TOOLS -->
   <section class="section">
-    <p class="section-eyebrow">Tools & Expertise</p>
+    <p class="section-eyebrow" data-lang data-de="Tools &amp; Expertise" data-en="Tools &amp; Expertise">Tools &amp; Expertise</p>
     <div class="tools-grid">
       <div class="tool-group">
-        <p class="tool-group-title">Plattformen</p>
+        <p class="tool-group-title" data-lang data-de="Plattformen" data-en="Platforms">Plattformen</p>
         <div class="tool-item">Instagram / TikTok / LinkedIn</div>
         <div class="tool-item">Facebook / Meta</div>
         <div class="tool-item">Pinterest</div>
       </div>
       <div class="tool-group">
-        <p class="tool-group-title">Tools</p>
+        <p class="tool-group-title" data-lang data-de="Tools" data-en="Tools">Tools</p>
         <div class="tool-item">Meta Business Suite</div>
         <div class="tool-item">Meta Werbeanzeigenmanager</div>
         <div class="tool-item">Canva</div>
@@ -997,49 +1018,49 @@
         <div class="tool-item">MS Office Suite</div>
       </div>
       <div class="tool-group">
-        <p class="tool-group-title">Strategisch</p>
-        <div class="tool-item">Marken- & Kampagnenentwicklung</div>
-        <div class="tool-item">Agentur-Pitches & -steuerung</div>
-        <div class="tool-item">Change Management</div>
-        <div class="tool-item">Budgetverantwortung</div>
+        <p class="tool-group-title" data-lang data-de="Strategisch" data-en="Strategic">Strategisch</p>
+        <div class="tool-item" data-lang data-de="Marken- & Kampagnenentwicklung" data-en="Brand & Campaign Development">Marken- & Kampagnenentwicklung</div>
+        <div class="tool-item" data-lang data-de="Agentur-Pitches & -steuerung" data-en="Agency Pitches & Management">Agentur-Pitches & -steuerung</div>
+        <div class="tool-item" data-lang data-de="Change Management" data-en="Change Management">Change Management</div>
+        <div class="tool-item" data-lang data-de="Budgetverantwortung" data-en="Budget Responsibility">Budgetverantwortung</div>
       </div>
       <div class="tool-group">
-        <p class="tool-group-title">Branchen</p>
-        <div class="tool-item">Luxury Hospitality</div>
-        <div class="tool-item">Sustainable Fashion & Lifestyle</div>
-        <div class="tool-item">FMCG / Media</div>
-        <div class="tool-item">Start-ups & KMU</div>
-        <div class="tool-item">Immobilien</div>
+        <p class="tool-group-title" data-lang data-de="Branchen" data-en="Industries">Branchen</p>
+        <div class="tool-item" data-lang data-de="Luxury Hospitality" data-en="Luxury Hospitality">Luxury Hospitality</div>
+        <div class="tool-item" data-lang data-de="Sustainable Fashion & Lifestyle" data-en="Sustainable Fashion & Lifestyle">Sustainable Fashion & Lifestyle</div>
+        <div class="tool-item" data-lang data-de="FMCG / Media" data-en="FMCG / Media">FMCG / Media</div>
+        <div class="tool-item" data-lang data-de="Start-ups & KMU" data-en="Start-ups & SMEs">Start-ups & KMU</div>
+        <div class="tool-item" data-lang data-de="Immobilien" data-en="Real Estate">Immobilien</div>
       </div>
     </div>
   </section>
 
   <!-- AUSBILDUNG -->
   <section class="section">
-    <p class="section-eyebrow">Ausbildung</p>
+    <p class="section-eyebrow" data-lang data-de="Ausbildung" data-en="Education">Ausbildung</p>
     <div class="edu-grid">
       <div class="edu-card">
         <p class="edu-school">Hochschule Düsseldorf</p>
-        <p class="edu-degree">MA Kommunikations-, Multimedia- und Marktmanagement · 2019</p>
-        <p class="edu-detail">Schwerpunkte: Medientechnik, Multichannel- & Distributionsmanagement<br>Thesis: Erfolgsfaktoren im Lebensmittel E-Commerce</p>
+        <p class="edu-degree" data-lang data-de="MA Kommunikations-, Multimedia- und Marktmanagement · 2019" data-en="MA Communications, Multimedia and Market Management · 2019">MA Kommunikations-, Multimedia- und Marktmanagement · 2019</p>
+        <p class="edu-detail" data-lang data-de="Schwerpunkte: Medientechnik, Multichannel- & Distributionsmanagement · Thesis: Erfolgsfaktoren im Lebensmittel E-Commerce" data-en="Focus: Media Technology, Multichannel & Distribution Management · Thesis: Success Factors in Food E-Commerce">Schwerpunkte: Medientechnik, Multichannel- & Distributionsmanagement<br>Thesis: Erfolgsfaktoren im Lebensmittel E-Commerce</p>
       </div>
       <div class="edu-card">
         <p class="edu-school">Rheinische Fachhochschule Köln</p>
-        <p class="edu-degree">BA Media Management · 2017</p>
-        <p class="edu-detail">Schwerpunkt: Markenentwicklung & -gestaltung<br>Thesis: Glaubwürdigkeit von klassischer Werbung vs. Influencer Marketing</p>
+        <p class="edu-degree" data-lang data-de="BA Media Management · 2017" data-en="BA Media Management · 2017">BA Media Management · 2017</p>
+        <p class="edu-detail" data-lang data-de="Schwerpunkt: Markenentwicklung & -gestaltung · Thesis: Glaubwürdigkeit von klassischer Werbung vs. Influencer Marketing" data-en="Focus: Brand Development & Design · Thesis: Credibility of Classic Advertising vs. Influencer Marketing">Schwerpunkt: Markenentwicklung & -gestaltung<br>Thesis: Glaubwürdigkeit von klassischer Werbung vs. Influencer Marketing</p>
       </div>
     </div>
   </section>
 
   <!-- PROFIL -->
   <section class="section">
-    <p class="section-eyebrow">Persönliches Profil</p>
+    <p class="section-eyebrow" data-lang data-de="Persönliches Profil" data-en="Personal Profile">Persönliches Profil</p>
     <div class="qual-grid">
-      <div class="qual-item"><span class="qual-icon">⚡</span><span class="qual-text">Hohe Eigeninitiative und Entscheidungsfreude auch in komplexen Situationen</span></div>
-      <div class="qual-item"><span class="qual-icon">🎯</span><span class="qual-text">Zielorientiertes, präzises Arbeiten — auch bei hohem Arbeitsaufkommen</span></div>
-      <div class="qual-item"><span class="qual-icon">💬</span><span class="qual-text">Sicheres Auftreten gegenüber GF, Agenturen und internationalen Kunden</span></div>
-      <div class="qual-item"><span class="qual-icon">🤝</span><span class="qual-text">Empathische Führungskraft mit Gespür für Teams in Veränderungsphasen</span></div>
-      <div class="qual-item"><span class="qual-icon">🔄</span><span class="qual-text">Kontinuierliche Weiterbildung und schnelle Adaption neuer Trends & Tools</span></div>
+      <div class="qual-item"><span class="qual-icon">⚡</span><span class="qual-text" data-lang data-de="Hohe Eigeninitiative und Entscheidungsfreude auch in komplexen Situationen" data-en="Strong initiative and decisive thinking even in complex situations">Hohe Eigeninitiative und Entscheidungsfreude auch in komplexen Situationen</span></div>
+      <div class="qual-item"><span class="qual-icon">🎯</span><span class="qual-text" data-lang data-de="Zielorientiertes, präzises Arbeiten — auch bei hohem Arbeitsaufkommen" data-en="Goal-oriented, precise working style — even under high workload">Zielorientiertes, präzises Arbeiten — auch bei hohem Arbeitsaufkommen</span></div>
+      <div class="qual-item"><span class="qual-icon">💬</span><span class="qual-text" data-lang data-de="Sicheres Auftreten gegenüber GF, Agenturen und internationalen Kunden" data-en="Confident communication with management, agencies and international clients">Sicheres Auftreten gegenüber GF, Agenturen und internationalen Kunden</span></div>
+      <div class="qual-item"><span class="qual-icon">🤝</span><span class="qual-text" data-lang data-de="Empathische Führungskraft mit Gespür für Teams in Veränderungsphasen" data-en="Empathetic leader with a strong sense for teams during periods of change">Empathische Führungskraft mit Gespür für Teams in Veränderungsphasen</span></div>
+      <div class="qual-item"><span class="qual-icon">🔄</span><span class="qual-text" data-lang data-de="Kontinuierliche Weiterbildung und schnelle Adaption neuer Trends & Tools" data-en="Continuous learning and quick adoption of new trends & tools">Kontinuierliche Weiterbildung und schnelle Adaption neuer Trends & Tools</span></div>
 
     </div>
   </section>
@@ -1047,18 +1068,18 @@
   <!-- CTA -->
   <section id="kontakt">
     <div class="cta-section">
-      <h2>Lass uns zusammenarbeiten.</h2>
-      <p>Du suchst eine erfahrene Marketingstrategin für dein nächstes Projekt — ob einmaliges Konzept, laufende Betreuung oder kurzfristige Unterstützung? Dann melde dich bei mir und wir schauen, wie ich dich und dein Projekt unterstützen kann.</p>
+      <h2 data-lang data-de="Lass uns zusammenarbeiten." data-en="Let's work together.">Lass uns zusammenarbeiten.</h2>
+      <p data-lang data-de="Du suchst eine erfahrene Marketingstrategin für dein nächstes Projekt — ob einmaliges Konzept, laufende Betreuung oder kurzfristige Unterstützung? Dann melde dich bei mir und wir schauen, wie ich dich und dein Projekt unterstützen kann." data-en="Looking for an experienced marketing strategist for your next project — whether a one-off concept, ongoing support or short-term assistance? Get in touch and let's explore how I can support you and your project.">Du suchst eine erfahrene Marketingstrategin für dein nächstes Projekt — ob einmaliges Konzept, laufende Betreuung oder kurzfristige Unterstützung? Dann melde dich bei mir und wir schauen, wie ich dich und dein Projekt unterstützen kann.</p>
       <div class="cta-buttons">
-        <a href="mailto:marie-christine.pomp@outlook.com" class="cta-btn-primary">E-Mail schreiben</a>
-        <a href="https://www.linkedin.com/in/mcpomp" target="_blank" class="cta-btn-secondary">LinkedIn öffnen</a>
+        <a href="mailto:marie-christine.pomp@outlook.com" class="cta-btn-primary" data-lang data-de="E-Mail schreiben" data-en="Send an email">E-Mail schreiben</a>
+        <a href="https://www.linkedin.com/in/mcpomp" target="_blank" class="cta-btn-secondary" data-lang data-de="LinkedIn öffnen" data-en="Message on LinkedIn">LinkedIn öffnen</a>
       </div>
     </div>
   </section>
 </div>
 
 <footer>
-  <p>© 2026 Marie-Christine Pomp · marie-christine.pomp@outlook.com · Köln</p>
+  <p data-lang data-de="© 2025 Marie-Christine Pomp · marie-christine.pomp@outlook.com · Köln" data-en="© 2025 Marie-Christine Pomp · marie-christine.pomp@outlook.com · Cologne">© 2025 Marie-Christine Pomp · marie-christine.pomp@outlook.com · Köln</p>
 </footer>
 
 <script>
@@ -1074,6 +1095,35 @@ function toggleProj(header) {
   const isOpen = body.classList.contains('open');
   body.classList.toggle('open', !isOpen);
   chevron.classList.toggle('open', !isOpen);
+}
+</script>
+
+<script>
+function setLang(lang) {
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.documentElement.lang = lang;
+
+  // Update all translated elements
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    const val = el.dataset[lang];
+    if (val !== undefined && val !== '') {
+      // Preserve child elements (like fl-badge spans) by only updating text nodes
+      const hasChildren = el.children.length > 0;
+      if (!hasChildren) {
+        el.textContent = val;
+      } else {
+        // For elements with children, update only the first text node
+        for (let node of el.childNodes) {
+          if (node.nodeType === 3 && node.textContent.trim()) {
+            node.textContent = val + ' ';
+            break;
+          }
+        }
+      }
+    }
+  });
 }
 </script>
 </body>
